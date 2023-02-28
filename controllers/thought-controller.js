@@ -24,10 +24,9 @@ createThought({body}, res) {
 },
 
 //update a user
-updateThought(req, req){
-     Thought.findOneAndUpdate({
-        _id: req.params.id
-    },
+updateThought(req, res){
+     Thought.findOneAndUpdate(
+    { _id: req.params.id},
     {$set:req.body},
     {runValidators: true, new:true}
    )
